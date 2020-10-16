@@ -1,0 +1,28 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install sudo
+      apt:
+        name: sudo
+        state: present
+    - name: adding existing user 'kalaspuffar' to group sudo
+      user:
+        name: 'kalaspuffar'
+        groups: sudo
+        append: yes
+    - name: Set a hostname
+      hostname:
+        name: '{{ ansible_host }}'
+    - name: Copy hosts file to hosts
+      copy:
+        src: /etc/hosts
+        dest: /etc/hosts
+
+- hosts: osds
+  become: yes
+  tasks:
+    - name: Install packed
+      apt:
+        name: parted
+        state: present

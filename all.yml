@@ -1,0 +1,17 @@
+ceph_origin: repository
+ceph_repository: community
+ceph_stable_release: octopus
+public_network: "192.168.6.0/24"
+cluster_network: "192.168.6.0/24"
+monitor_interface: enp0s3
+grafana_admin_user: admin
+grafana_admin_password: CT2Jxf07QUD4
+dashboard_admin_user: admin
+dashboard_admin_password: CT2Jxf07QUD4
+ceph_use_distro_backports: false # DEBIAN ONLY
+ceph_directories_mode: "0755"
+containerized_deployment: false
+fsid: 4e0460d7-5123-4845-bf7b-fc593e8b006a
+journal_size: 10240
+devices:
+  - '/dev/sdb'
